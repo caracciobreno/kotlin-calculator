@@ -1,0 +1,3 @@
+add 10
+subtract 5
+apply 100
