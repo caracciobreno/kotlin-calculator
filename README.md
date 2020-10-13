@@ -19,5 +19,7 @@ Usage:
 $ ./gradlew test'
 ```
 
+It's possible to see the HTML output of the test by opening the file `buid/reports/tests/test/index.html`.
+
 ### Example instructions
 This project comes with a `example-instructions.txt` file with some example instructions!
