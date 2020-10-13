@@ -3,13 +3,17 @@ package service.calculator
 // Instruction defines an Instruction accepted by the program, could be an Arithmetic Instruction or an Apply
 // instruction. All instructions must come with a number.
 sealed class Instruction(val value: Double)
+
+// Instruction used to start the calculator with a given number
 class ApplyInstruction(value: Double) : Instruction(value) {
 
+    // Applies the instruction, creating a calculator with the value provided
     internal fun apply(): Calculator {
         return Calculator(value)
     }
 }
 
+// Arithmetic instructions, such as Add, Subtract etc.
 sealed class ArithmeticInstruction(value: Double) : Instruction(value) {
 
     class Add(value: Double) : ArithmeticInstruction(value) {
@@ -42,6 +46,6 @@ sealed class ArithmeticInstruction(value: Double) : Instruction(value) {
         }
     }
 
-    // Executes the instruction on target using the given value, return the result of the operation
+    // Executes the instruction on target using the given value, returning the result of the operation
     abstract fun execute(target: Double): Double
 }

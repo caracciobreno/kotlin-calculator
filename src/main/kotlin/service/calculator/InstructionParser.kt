@@ -7,6 +7,8 @@ const val multiplyInstruction = "multiply"
 const val divideInstruction = "divide"
 const val applyInstruction = "apply"
 
+// Parses the current string in order to create an Instruction. Must be in the format "instruction <NUMBER>", e.g:
+// "add 10".
 fun String.parseInstruction(): Instruction {
     val splitLine = this.split(" ")
 
@@ -27,6 +29,7 @@ fun String.parseInstruction(): Instruction {
     }
 }
 
+// Maps the list to a list of Instructions
 fun List<String>.parseInstructions(): List<Instruction> {
     return this.map(String::parseInstruction)
 }
